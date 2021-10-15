@@ -20,7 +20,7 @@ export class AppController {
     return this.appService.getNextCall(this.pairwiseQueue.pop());
   }
 
-  @Get('getNextItem')
+  @Get('getAllQueue')
   getAllQueue(): IMessage[] {
     const allQueue: IMessage[] = this.pairwiseQueue.getAllArray();
     return this.appService.getAllQueue(allQueue);
