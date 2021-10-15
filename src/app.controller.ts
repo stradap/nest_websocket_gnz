@@ -7,10 +7,10 @@ import { PriorityQueueClass } from './utils/queue';
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
-  pairwiseQueue = new PriorityQueueClass((a, b) => a[1] > b[1]);
+  pairwiseQueue = new PriorityQueueClass((a, b) => a.priority > b.priority);
 
   @Get()
-  getHello(): {} {
+  getSize(): {} {
     return this.appService.getSizeOfQueue(this.pairwiseQueue.size());
   }
 
